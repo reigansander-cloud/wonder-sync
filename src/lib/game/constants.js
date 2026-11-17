@@ -1,13 +1,13 @@
 // Shared game constants for 7 Wonders
 
 export const RESOURCE_ICONS = {
-  wood: "https://media.base44.com/images/public/user_6a19f3b0dd22f66955c17143/895f219af_Wood2.png",
-  stone: "https://media.base44.com/images/public/user_6a19f3b0dd22f66955c17143/9346dfd79_Stone2.png",
-  clay: "https://media.base44.com/images/public/user_6a19f3b0dd22f66955c17143/aa41c856c_Clay2.png",
-  ore: "https://media.base44.com/images/public/user_6a19f3b0dd22f66955c17143/0051f995b_Ore2.png",
-  glass: "https://media.base44.com/images/public/user_6a19f3b0dd22f66955c17143/c15020f84_Glass2.png",
-  papyrus: "https://media.base44.com/images/public/user_6a19f3b0dd22f66955c17143/e989f6116_Papyrus2.png",
-  loom: "https://media.base44.com/images/public/user_6a19f3b0dd22f66955c17143/92c9b6924_Loom.png",
+  wood: "https://pcfxwugndktkomxgfauc.supabase.co/storage/v1/object/public/uploads/imported/1861b3118b_895f219af_Wood2.png",
+  stone: "https://pcfxwugndktkomxgfauc.supabase.co/storage/v1/object/public/uploads/imported/b48ed417d1_9346dfd79_Stone2.png",
+  clay: "https://pcfxwugndktkomxgfauc.supabase.co/storage/v1/object/public/uploads/imported/8c6ae457dd_aa41c856c_Clay2.png",
+  ore: "https://pcfxwugndktkomxgfauc.supabase.co/storage/v1/object/public/uploads/imported/8ce7174d45_0051f995b_Ore2.png",
+  glass: "https://pcfxwugndktkomxgfauc.supabase.co/storage/v1/object/public/uploads/imported/5bc729cda0_c15020f84_Glass2.png",
+  papyrus: "https://pcfxwugndktkomxgfauc.supabase.co/storage/v1/object/public/uploads/imported/e80d87614e_e989f6116_Papyrus2.png",
+  loom: "https://pcfxwugndktkomxgfauc.supabase.co/storage/v1/object/public/uploads/imported/7cba4427c1_92c9b6924_Loom.png",
 };
 
 export const RESOURCE_ORDER = ["wood", "stone", "clay", "ore", "glass", "papyrus", "loom"];
@@ -15,15 +15,15 @@ export const RAW_RESOURCES = ["wood", "stone", "clay", "ore"];
 export const MANUFACTURED_RESOURCES = ["glass", "papyrus", "loom"];
 
 export const ICONS = {
-  coin: "https://media.base44.com/images/public/user_6a19f3b0dd22f66955c17143/f75487bd5_Coin.png",
-  vp: "https://media.base44.com/images/public/user_6a19f3b0dd22f66955c17143/1454afdda_VictoryPoints.png",
-  shield: "https://media.base44.com/images/public/user_6a19f3b0dd22f66955c17143/28e646a85_MilitaryShield.png",
+  coin: "https://pcfxwugndktkomxgfauc.supabase.co/storage/v1/object/public/uploads/imported/302ab026b9_f75487bd5_Coin.png",
+  vp: "https://pcfxwugndktkomxgfauc.supabase.co/storage/v1/object/public/uploads/imported/69bddd18b5_1454afdda_VictoryPoints.png",
+  shield: "https://pcfxwugndktkomxgfauc.supabase.co/storage/v1/object/public/uploads/imported/ca9d660ef0_28e646a85_MilitaryShield.png",
 };
 
 export const SCIENCE_SYMBOLS = [
-  { key: "script", name: "Script", icon: "https://media.base44.com/images/public/user_6a19f3b0dd22f66955c17143/5aa2b499b_Science-Script.png" },
-  { key: "gear", name: "Gear", icon: "https://media.base44.com/images/public/user_6a19f3b0dd22f66955c17143/c73f18da2_Science-Gear.png" },
-  { key: "mason", name: "Mason", icon: "https://media.base44.com/images/public/user_6a19f3b0dd22f66955c17143/9b87f2d8a_Science-Mason.png" },
+  { key: "script", name: "Script", icon: "https://pcfxwugndktkomxgfauc.supabase.co/storage/v1/object/public/uploads/imported/7f8809a374_5aa2b499b_Science-Script.png" },
+  { key: "gear", name: "Gear", icon: "https://pcfxwugndktkomxgfauc.supabase.co/storage/v1/object/public/uploads/imported/4bc3fc5750_c73f18da2_Science-Gear.png" },
+  { key: "mason", name: "Mason", icon: "https://pcfxwugndktkomxgfauc.supabase.co/storage/v1/object/public/uploads/imported/623b9c7bf5_9b87f2d8a_Science-Mason.png" },
 ];
 
 export const CARD_COLORS = [
@@ -48,11 +48,11 @@ export const AGES = ["leader", "1", "2", "3"];
 export const AGE_POINTS = { 1: 1, 2: 3, 3: 5 };
 
 export const TOKEN_ICONS = {
-  "1": "https://media.base44.com/images/public/6a67f916b96089d055f69fd3/375c8824d_Age1Trophy.png",
-  "2": "https://media.base44.com/images/public/6a67f916b96089d055f69fd3/7a124e570_Age2Trophy.png",
-  "3": "https://media.base44.com/images/public/6a67f916b96089d055f69fd3/ddfc78dfa_Age3Trophy.png",
-  loss: "https://media.base44.com/images/public/6a67f916b96089d055f69fd3/8aca72127_Loss.png",
-  penalty: "https://media.base44.com/images/public/6a67f916b96089d055f69fd3/69d9afeb2_Penalty.jpeg",
+  "1": "https://pcfxwugndktkomxgfauc.supabase.co/storage/v1/object/public/uploads/imported/878e037dc2_375c8824d_Age1Trophy.png",
+  "2": "https://pcfxwugndktkomxgfauc.supabase.co/storage/v1/object/public/uploads/imported/e111b51cc1_7a124e570_Age2Trophy.png",
+  "3": "https://pcfxwugndktkomxgfauc.supabase.co/storage/v1/object/public/uploads/imported/0621386089_ddfc78dfa_Age3Trophy.png",
+  loss: "https://pcfxwugndktkomxgfauc.supabase.co/storage/v1/object/public/uploads/imported/e9c9988f09_8aca72127_Loss.png",
+  penalty: "https://pcfxwugndktkomxgfauc.supabase.co/storage/v1/object/public/uploads/imported/810d0d8374_69d9afeb2_Penalty.jpeg",
 };
 
 // Wonders — boards with starting resource + stages (cost in resources + rewards as effects)
@@ -132,9 +132,9 @@ export function builtinWonderOverride(w) {
 }
 
 export const PATRONAGE_TOKEN_IMAGES = {
-  "1": "https://media.base44.com/images/public/6a67f916b96089d055f69fd3/be8ba8073_Age1Patronage.png",
-  "2": "https://media.base44.com/images/public/6a67f916b96089d055f69fd3/031cf4952_Age2Patronage.png",
-  "3": "https://media.base44.com/images/public/6a67f916b96089d055f69fd3/9fa52627f_Age3Patronage.png",
+  "1": "https://pcfxwugndktkomxgfauc.supabase.co/storage/v1/object/public/uploads/imported/23f182d1ac_be8ba8073_Age1Patronage.png",
+  "2": "https://pcfxwugndktkomxgfauc.supabase.co/storage/v1/object/public/uploads/imported/fe3fd8b312_031cf4952_Age2Patronage.png",
+  "3": "https://pcfxwugndktkomxgfauc.supabase.co/storage/v1/object/public/uploads/imported/95863d0fa4_9fa52627f_Age3Patronage.png",
 };
 
 // Edifice pool — one random edifice per age is enabled when the Edifice
@@ -245,20 +245,20 @@ export const ARMADA_TRACK_COLORS = ["red", "yellow", "blue", "green"];
 export const NAVAL_VICTORY_POINTS = { 0: 1, 1: 3, 2: 5, 3: 7 };
 export const NAVAL_DEFEAT_POINTS = { 1: -1, 2: -2, 3: -3 };
 
-export const NAVAL_SHIELD_IMAGE = "https://media.base44.com/images/public/6a67f916b96089d055f69fd3/acc30a687_NavalShield.png";
-export const ISLAND_IMAGE = "https://media.base44.com/images/public/6a67f916b96089d055f69fd3/9ab4c8872_Island.png";
+export const NAVAL_SHIELD_IMAGE = "https://pcfxwugndktkomxgfauc.supabase.co/storage/v1/object/public/uploads/imported/d39e81aa0f_acc30a687_NavalShield.png";
+export const ISLAND_IMAGE = "https://pcfxwugndktkomxgfauc.supabase.co/storage/v1/object/public/uploads/imported/9d7d4e985f_9ab4c8872_Island.png";
 
 export const NAVAL_TOKEN_IMAGES = {
   victory: {
-    "0": "https://media.base44.com/images/public/6a67f916b96089d055f69fd3/02364189a_Age0NavalVictory.png",
-    "1": "https://media.base44.com/images/public/6a67f916b96089d055f69fd3/767901c38_Age1NavalVictory.png",
-    "2": "https://media.base44.com/images/public/6a67f916b96089d055f69fd3/97a3fa27e_Age2NavalVictory.png",
-    "3": "https://media.base44.com/images/public/6a67f916b96089d055f69fd3/a0c6a3363_Age3NavalVictory.png",
+    "0": "https://pcfxwugndktkomxgfauc.supabase.co/storage/v1/object/public/uploads/imported/7f8352ade5_02364189a_Age0NavalVictory.png",
+    "1": "https://pcfxwugndktkomxgfauc.supabase.co/storage/v1/object/public/uploads/imported/cf366be4e5_767901c38_Age1NavalVictory.png",
+    "2": "https://pcfxwugndktkomxgfauc.supabase.co/storage/v1/object/public/uploads/imported/26a57921ef_97a3fa27e_Age2NavalVictory.png",
+    "3": "https://pcfxwugndktkomxgfauc.supabase.co/storage/v1/object/public/uploads/imported/3d666c95a7_a0c6a3363_Age3NavalVictory.png",
   },
   defeat: {
-    "1": "https://media.base44.com/images/public/6a67f916b96089d055f69fd3/cfd17297f_Age1Navaldefeat.png",
-    "2": "https://media.base44.com/images/public/6a67f916b96089d055f69fd3/abba9dff0_Age2Navaldefeat.png",
-    "3": "https://media.base44.com/images/public/6a67f916b96089d055f69fd3/f425b84c4_Age3Navaldefeat.png",
+    "1": "https://pcfxwugndktkomxgfauc.supabase.co/storage/v1/object/public/uploads/imported/6efc954def_cfd17297f_Age1Navaldefeat.png",
+    "2": "https://pcfxwugndktkomxgfauc.supabase.co/storage/v1/object/public/uploads/imported/a79676d8d5_abba9dff0_Age2Navaldefeat.png",
+    "3": "https://pcfxwugndktkomxgfauc.supabase.co/storage/v1/object/public/uploads/imported/c4526258cc_f425b84c4_Age3Navaldefeat.png",
   },
 };
 

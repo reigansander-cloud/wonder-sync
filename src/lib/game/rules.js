@@ -74,7 +74,7 @@ const emptyRes = () => ({ wood: 0, stone: 0, clay: 0, ore: 0, glass: 0, papyrus:
 // ---------- Deck generation ----------
 // White Space is the filler card used when a deck has too few cards for a
 // player count. It grants a choice of any of the 7 resources, 1 VP, and 1 coin.
-export const WHITE_SPACE_IMAGE = "https://media.base44.com/images/public/6a67f916b96089d055f69fd3/f26e08aec_WHITESPACE.png";
+export const WHITE_SPACE_IMAGE = "https://pcfxwugndktkomxgfauc.supabase.co/storage/v1/object/public/uploads/imported/82d4c8bdd4_f26e08aec_WHITESPACE.png";
 export const WHITE_SPACE_EFFECTS = [
   { kind: "vp", amount: 1 },
 ];

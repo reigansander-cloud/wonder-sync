@@ -26,7 +26,7 @@ export function ScienceIcon({ symbol, size = 20, className }) {
   return <img src={s.icon} alt={s.name} style={{ width: size, height: size }} className={cn("object-contain drop-shadow", className)} />;
 }
 
-const DIPLOMACY_ICON = "https://media.base44.com/images/public/6a67f916b96089d055f69fd3/e7ceb3f6d_Diplomacy.png";
+const DIPLOMACY_ICON = "https://pcfxwugndktkomxgfauc.supabase.co/storage/v1/object/public/uploads/imported/aa771d6231_e7ceb3f6d_Diplomacy.png";
 export function DiplomacyIcon({ size = 20, className }) {
   return <img src={DIPLOMACY_ICON} alt="diplomacy" style={{ width: size, height: size }} className={cn("object-contain drop-shadow", className)} />;
 }
