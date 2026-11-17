@@ -1,8 +1,11 @@
 // Inspired by react-hot-toast library
 import { useState, useEffect } from "react";
 
-const TOAST_LIMIT = 20;
-const TOAST_REMOVE_DELAY = 1000000;
+const TOAST_LIMIT = 3;
+const TOAST_REMOVE_DELAY = 1000;
+// Toasts close themselves after this long (Radix's own timer pauses while the
+// window isn't focused, which left messages stuck on screen).
+const TOAST_AUTO_CLOSE = 4000;
 
 const actionTypes = {
   ADD_TOAST: "ADD_TOAST",
@@ -133,6 +136,8 @@ function toast({ ...props }) {
       },
     },
   });
+
+  setTimeout(dismiss, props.duration || TOAST_AUTO_CLOSE);
 
   return {
     id,
