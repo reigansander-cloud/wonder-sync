@@ -24,14 +24,15 @@ import BuryDialog from "@/components/game/BuryDialog";
 import DiscardFromCityDialog from "@/components/game/DiscardFromCityDialog";
 import WonderTierChoiceDialog from "@/components/game/WonderTierChoiceDialog";
 import EdificeCompleteDialog from "@/components/game/EdificeCompleteDialog";
-import { MyBoard, NeighborPanel, InspectOverlay, HandCard, OtherPlayersButton } from "@/components/game/GameRoomParts";
+import { MyBoard, NeighborPanel, InspectOverlay, HandCard, OtherPlayersButton, cardStatus } from "@/components/game/GameRoomParts";
+import { toast } from "@/components/ui/use-toast";
 import { generateArmadaBoard } from "@/lib/game/armada";
 import { getWonder, setWonderRegistry, ARMADA_REWARDS } from "@/lib/game/constants";
 import {
   generateDeck, canAffordWonderStage, scorePlayer, rotateHands,
   passDirectionForAge, nextAge, getProducibleResources, farNeighborsOf,
   aiChoose, aiChooseLeader, aiChooseLeaderDraft, aiRandomPrefs, recomputeStaticEffects, shuffle, applyEffect,
-  computeLeaderReduction,
+  computeLeaderReduction, canFreeFirstPerColor,
 } from "@/lib/game/rules";
 import { rollEdifices, edificeForAge, edificeList, setEdificeRegistry } from "@/lib/game/edifices";
 import { beginAction, resolveDecision, aiResolveQueue, mergeNotifs } from "@/lib/game/queue";
@@ -381,8 +382,11 @@ export default function GameRoom() {
       // building a wonder on the last card) must be allowed to resolve it
       // before the round ends, or the edifice would complete without their
       // donation.
-      if (players.every((p) => (p.hand || []).length === 0) && players.some((p) => !p.round_done)) {
-        const stuck = players.filter((p) => !p.round_done && (p.decision_queue || []).length === 0);
+      // Also covers a player left with an empty hand while others still have
+      // cards (hand sizes out of step): they can't move, so don't wait on them.
+      const emptyHanded = players.filter((p) => !p.round_done && (p.hand || []).length === 0 && (p.decision_queue || []).length === 0);
+      if ((players.every((p) => (p.hand || []).length === 0) && players.some((p) => !p.round_done)) || emptyHanded.length) {
+        const stuck = players.filter((p) => !p.round_done && (p.hand || []).length === 0 && (p.decision_queue || []).length === 0);
         if (stuck.length) {
           runHostJob("unstick", async () => {
             await base44.entities.PlayerState.bulkUpdate(
@@ -620,10 +624,29 @@ export default function GameRoom() {
     if (!me || me.round_done) return;
     setBuildMode(false);
     if (action === "build" && !canBuildWonder) return;
+    if (action === "play") {
+      // Clicking a card you can't pay for used to silently SELL it (and a
+      // duplicate silently skipped your turn). Use a free play if one is
+      // available, otherwise tell the player and do nothing.
+      const card = (me.hand || []).find((c) => c.id === cardId);
+      const status = card ? cardStatus(card, me, neighbors, allCardsById, farNeighbors, game) : "none";
+      if (status === "duplicate") { toast({ title: "You already have a card with that name", description: "Sell it for coins or use it to build your wonder instead." }); return; }
+      if (status === "free_card") action = "play_free";
+      else if (status === "none") {
+        if (card && canFreeFirstPerColor(me, card, game, allCardsById)) action = "play_free_color";
+        else { toast({ title: "You can't afford that card", description: "Sell it for coins or use it to build your wonder instead." }); return; }
+      }
+    }
     const g = { ...game, edifice_state: cloneJson(game.edifice_state) };
     const edBefore = cloneJson(game.edifice_state);
     const sim = JSON.parse(JSON.stringify(me));
     const res = beginAction(sim, cardId, action, g, players, allCardsById);
+    // Every real move records the chosen card. If nothing was recorded the move
+    // wasn't allowed (e.g. a leader you can't pay for): don't end the turn.
+    if (action !== "pick" && sim.chosen_card_id !== cardId) {
+      toast({ title: "That move isn't possible right now" });
+      return;
+    }
     await commitPlayerUpdate(sim, res, g, edBefore);
   });
 
