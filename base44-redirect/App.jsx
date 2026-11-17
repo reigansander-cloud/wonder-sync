@@ -6,7 +6,7 @@
 // =============================================================================
 import React, { useEffect } from 'react';
 
-const NEW_SITE = 'https://YOUR-GITHUB-NAME.github.io/wonder-sync'; // no trailing slash
+const NEW_SITE = 'https://reigansander-cloud.github.io/wonder-sync'; // no trailing slash
 
 const DROP_PARAMS = ['access_token', 'clear_access_token', 'app_id', 'app_base_url', 'functions_version', 'from_url'];
 

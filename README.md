@@ -24,6 +24,12 @@ npm run dev
 | One-off move from Base44 | `migration/migrate-from-base44.js` |
 | Page that sends the old Base44 address here | `base44-redirect/App.jsx` |
 
+## Where it lives
+
+- Site: https://reigansander-cloud.github.io/wonder-sync/
+- Supabase project: `wonder-sync` (pcfxwugndktkomxgfauc)
+- Old Base44 app (now just a redirect): https://wonder-sync-play.base44.app
+
 ## Setting up from scratch
 
 1. **Supabase**: create a project, open *SQL Editor*, paste all of
