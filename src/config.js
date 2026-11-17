@@ -2,5 +2,5 @@
 // visitor's browser anyway); what people can do is controlled by the rules in
 // supabase/schema.sql. VITE_SUPABASE_URL / VITE_SUPABASE_ANON_KEY in
 // .env.local (or the GitHub repo variables) override these.
-export const SUPABASE_URL = '';
-export const SUPABASE_ANON_KEY = '';
+export const SUPABASE_URL = 'https://pcfxwugndktkomxgfauc.supabase.co';
+export const SUPABASE_ANON_KEY = 'sb_publishable_4x8U7lYkNl1Z4sLHCEQM0w_c-4Q3jcS';
